@@ -14,13 +14,13 @@ class Program
         if (Grade >= 90){
             letter = "A";
         }
-        else if(Grade >= 80 || Grade < 90){
+        else if(Grade >= 80){
             letter = "B";
         }
-        else if(Grade >= 70 || Grade < 80){
+        else if(Grade >= 70){
             letter = "C";
         }
-        else if (Grade >= 60 || Grade < 70){
+        else if (Grade >= 60){
             letter = "D";
         }
         else{
