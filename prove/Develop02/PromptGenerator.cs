@@ -3,12 +3,12 @@ using System.IO;
 
 public class PromptGenerator{
         public List<string> _prompts = new List<string>{
-            "a",
-            "b",
-            "c",
-            "d",
-            "e",
-            "f"
+            "Do This",
+            "Do That",
+            "Do Stuff",
+            "Do Something",
+            "Do Something Else",
+            "Do Something Different"
         };
     public string DisplayPrompt(){
         Random random = new Random();
