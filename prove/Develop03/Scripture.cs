@@ -1,4 +1,6 @@
 using System;
+using System.Formats.Asn1;
+using System.Net.Quic;
 using System.Runtime.CompilerServices;
 
 public class Scripture{
@@ -20,8 +22,13 @@ public void GetRenderedText()
     int hiddenCount = 0;
     while (hiddenCount < _words.Count){
         Console.WriteLine(GenerateRenderedText(hiddenCount));
-        Console.WriteLine("Hello World");
-        Console.ReadLine();
+        string answer = Console.ReadLine();
+        if (answer.ToUpper() == "quit"){
+            break;
+        }
+        else{
+            answer = "";
+        }
         Console.Clear();
         hiddenCount++;
     }
