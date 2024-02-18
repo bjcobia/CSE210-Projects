@@ -38,7 +38,7 @@ class Program
         
         scripture.GetRenderedText();
 
-        Console.WriteLine("All words are hidden. Press enter to exit.");
+        Console.WriteLine("Press enter to exit.");
         Console.ReadLine();
 
     }

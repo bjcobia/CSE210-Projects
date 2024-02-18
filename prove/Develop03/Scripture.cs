@@ -23,7 +23,7 @@ public void GetRenderedText()
     while (hiddenCount < _words.Count){
         Console.WriteLine(GenerateRenderedText(hiddenCount));
         string answer = Console.ReadLine();
-        if (answer.ToUpper() == "quit"){
+        if (answer == "Quit" || answer == "quit"){
             break;
         }
         else{
