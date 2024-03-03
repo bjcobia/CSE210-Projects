@@ -1,20 +1,61 @@
 using System;
+using System.Threading;
+using System.Xml.Serialization;
 
 class Program
 {
     static void Main(string[] args)
     {
-// Creating instances of each activity
-        BreathingActivity breathingActivity = new BreathingActivity("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", 30); // 30 seconds
-        ReflectingActivity reflectionActivity = new ReflectingActivity("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 60); // 60 seconds
-        ListingActivity listingActivity = new ListingActivity("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 45); // 45 seconds
+        Console.WriteLine("Welcome to the Mindfulness App!\n");
+        string choice;
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to the Mindfulness App!\n");
 
-        // Running each activity
-        // breathingActivity.RunActivity();
+            Console.WriteLine("Here are your activities: ");
+            Console.WriteLine("1. Breathing\n2. Reflection\n3. Listing\n4. Quit");
 
-        reflectionActivity.RunActivity();
+            Console.WriteLine("Select an activity to begin: ");
+            choice = Console.ReadLine();
 
-        // listingActivity.RunActivity();
+            if (choice == "1")
+            {
+                Console.WriteLine("Please choose how long you would like the activity to last (in seconds): ");
+                int duration = int.Parse(Console.ReadLine());
+                BreathingActivity breathingActivity = new BreathingActivity("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", duration);
+                breathingActivity.RunActivity();
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("Please choose how long you would like the activity to last (in seconds): ");
+                int duration = int.Parse(Console.ReadLine());
+                ReflectingActivity reflectionActivity = new ReflectingActivity("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", duration);
+                reflectionActivity.RunActivity();
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("Please choose how long you would like the activity to last (in seconds): ");
+                int duration = int.Parse(Console.ReadLine());
+                ListingActivity listingActivity = new ListingActivity("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", duration);
+                listingActivity.RunActivity();
+            }
+            else if (choice == "4")
+            {
+                Console.WriteLine("Goodbye!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice. Please try again.");
+            }
 
+            // Prompt user to press any key to return to the menu
+            if (choice != "4")
+            {
+                Console.WriteLine("\nPress any key to return to the menu...");
+                Console.ReadKey(true);
+            }
+
+        } while (choice != "4");
     }
 }
