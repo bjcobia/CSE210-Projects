@@ -35,13 +35,15 @@ public class ReflectingActivity : Activity
         while (DateTime.Now < endTime)
         {
             string prompt = SelectRandomPrompt();
-            Console.WriteLine($"Reflecting on the {prompt}");
+            Console.WriteLine($"{prompt}");
             Thread.Sleep(6000);
 
             string question = SelectRandomQuestion();
             Console.WriteLine($"{question}");
             Thread.Sleep(6000);
             Console.WriteLine();
+            Console.WriteLine("Press Enter to continue when ready.");
+            Console.ReadLine();
         }
         DisplayingEndMessage();
     }
