@@ -1,11 +1,9 @@
-using System.Reflection.Metadata.Ecma335;
-
 public abstract class Goal
 {
     private string _goalName;
     private string _description;
     private int _points;
-    private bool _isCompleted; 
+    private bool _isCompleted;
 
     public Goal(string goalName, string description, int points)
     {
@@ -13,6 +11,31 @@ public abstract class Goal
         _description = description;
         _points = points;
         _isCompleted = false;
+    }
+
+    public string GetName()
+    {
+        return _goalName;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public int GetPoints()
+    {
+        return _points;
+    }
+
+    public bool GetIsCompleted()
+    {
+        return _isCompleted;
+    }
+
+    public void SetIsCompleted(bool isCompleted)
+    {
+        _isCompleted = isCompleted;
     }
 
     public abstract int RecordEvent();
