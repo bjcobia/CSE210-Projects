@@ -1,9 +1,9 @@
 public class Address
 {
-    public string _streetAddress { get; }
-    public string _city { get; }
-    public string _stateProvince { get; }
-    public string _country { get; }
+    private string _streetAddress;
+    private string _city;
+    private string _stateProvince;
+    private string _country;
 
     public Address(string streetAddress, string city, string stateProvince, string country)
     {

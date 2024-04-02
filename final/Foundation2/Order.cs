@@ -1,7 +1,7 @@
 public class Order
 {
     private List<Product> _products;
-    public Customer _customer { get; }
+    private Customer _customer;
 
     public Order(Customer customer)
     {
@@ -30,14 +30,14 @@ public class Order
         string packingLabel = "";
         foreach (var product in _products)
         {
-            packingLabel += $"Product: {product._name}, ID: {product._productId}\n";
+            packingLabel += $"Product: {product.GetName()}, ID: {product.GetProductId()}\n"; 
         }
         return packingLabel;
     }
 
     public string GetShippingLabel()
     {
-        var customerAddress = _customer._address;
-        return $"Name: {_customer._name}\n{customerAddress.GetFullAddress()}";
+        var customerAddress = _customer.GetAddress();
+        return $"Name: {_customer.GetName()}\n{customerAddress.GetFullAddress()}";
     }
 }

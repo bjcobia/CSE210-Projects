@@ -1,5 +1,5 @@
 using System;
-using Microsoft.VisualBasic;
+using System.Collections.Generic;
 
 class Program
 {
@@ -11,9 +11,9 @@ class Program
         Customer customer1 = new Customer("John Smith", address1);
         Customer customer2 = new Customer("Jane Doe", address2);
 
-        Product product1 = new Product("Cereal", "Cereal123", 5.99, 10);
-        Product product2 = new Product("Milk", "Milk123", 3.99, 20);
-        Product product3 = new Product("Eggs", "Eggs123", 2.99, 30);
+        Product product1 = new Product("Cereal", "#198561", 5.99, 10);
+        Product product2 = new Product("Milk", "#946512", 3.99, 20);
+        Product product3 = new Product("Eggs", "#2598415", 2.99, 30);
 
         Order order1 = new Order(customer1);
         order1.AddProduct(product1);
