@@ -14,23 +14,33 @@ public class Activity
         _minutes = minutes;
     }
 
+    public int GetMinutes()
+    {
+        return _minutes;
+    }
+
+    public string GetDate()
+    {
+        return _date;
+    }
+
     public virtual double GetDistance()
     {
-        return 0; 
+        return 0;
     }
 
     public virtual double GetSpeed()
     {
-        return 0; 
+        return 0;
     }
 
     public virtual double GetPace()
     {
-        return 0; 
+        return 0;
     }
 
     public virtual string GetSummary()
     {
-        return $"{_date.ToShortDateString()} {_date.ToShortTimeString()} - {_minutes} min";
+        return $"{_date} - {_minutes} min";
     }
 }

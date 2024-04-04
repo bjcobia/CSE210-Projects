@@ -10,17 +10,17 @@ public class Swimming : Activity
 
     public override double GetDistance()
     {
-        return _laps * 50.0 / 1000.0; // Distance in kilometers
+        return Math.Round(_laps * 50.0 / 1000.0, 2); // Distance in kilometers
     }
 
     public override double GetSpeed()
     {
-        return GetDistance() / (base._minutes / 60.0); // Speed in kph
+        return Math.Round(GetDistance() / (base.GetMinutes() / 60.0), 2); // Speed in kph
     }
 
     public override double GetPace()
     {
-        return base._minutes / GetDistance(); // Pace in minutes per kilometer
+        return Math.Round(base.GetMinutes() / GetDistance(), 2); // Pace in minutes per kilometer
     }
 
     public override string GetSummary()

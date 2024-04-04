@@ -10,17 +10,17 @@ public class StationaryBikes : Activity
 
     public override double GetSpeed()
     {
-        return _speed;
+        return Math.Round(_speed, 2);
     }
 
     public override double GetDistance()
     {
-        return base._minutes / 60.0 * _speed;
+        return Math.Round(base.GetMinutes() / 60.0 * _speed, 2);
     }
 
     public override double GetPace()
     {
-        return 60.0 / _speed;
+        return Math.Round(60.0 / _speed, 2);
     }
 
     public override string GetSummary()
