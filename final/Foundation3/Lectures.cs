@@ -3,7 +3,7 @@ public class Lectures : Event
     private string _speakerName;
     private int _capacity;
 
-    public Lectures(string title, string description, DateTime date, TimeSpan time, Address address, string speakerName, int capacity)
+    public Lectures(string title, string description, string date, TimeSpan time, Address address, string speakerName, int capacity)
         : base(title, description, date, time, address)
     {
         _speakerName = speakerName;
@@ -17,6 +17,6 @@ public class Lectures : Event
 
     public override string GetShortDescription()
     {
-        return $"Type: Lecture\nTitle: {base.GetTitle()}\nDate: {base.GetDate().ToShortDateString()}";
+        return $"Type: Lecture\nTitle: {base.GetTitle()}\nDate: {base.GetDate()}";
     }
 }

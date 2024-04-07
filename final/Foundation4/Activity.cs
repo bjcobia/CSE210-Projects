@@ -6,8 +6,6 @@ public class Activity
     private string _date;
     private int _minutes;
 
-
-
     public Activity(string date, int minutes)
     {
         _date = date;
@@ -17,11 +15,6 @@ public class Activity
     public int GetMinutes()
     {
         return _minutes;
-    }
-
-    public string GetDate()
-    {
-        return _date;
     }
 
     public virtual double GetDistance()

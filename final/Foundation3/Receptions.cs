@@ -2,7 +2,7 @@ public class Receptions : Event
 {
     private string _rsvpEmail;
 
-    public Receptions(string title, string description, DateTime date, TimeSpan time, Address address, string rsvpEmail)
+    public Receptions(string title, string description, string date, TimeSpan time, Address address, string rsvpEmail)
         : base(title, description, date, time, address)
     {
         _rsvpEmail = rsvpEmail;
@@ -15,6 +15,6 @@ public class Receptions : Event
 
     public override string GetShortDescription()
     {
-        return $"Type: Reception\nTitle: {base.GetTitle()}\nDate: {base.GetDate().ToShortDateString()}";
+        return $"Type: Reception\nTitle: {base.GetTitle()}\nDate: {base.GetDate()}";
     }
 }

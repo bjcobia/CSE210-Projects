@@ -2,11 +2,11 @@ public class Event
 {
     private string _title{get;}
     private string _description{get;}
-    private DateTime _date{get;}
+    private string _date{get;}
     private TimeSpan _time{get;}
     private Address _address{get;}
 
-    public Event(string title, string description, DateTime date, TimeSpan time, Address address)
+    public Event(string title, string description, string date, TimeSpan time, Address address)
     {
         _title = title;
         _description = description;
@@ -20,14 +20,14 @@ public class Event
         return _title;
     }
 
-    public DateTime GetDate()
+    public string GetDate()
     {
         return _date;
     }
 
     public string GetStandardDetails()
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate: {_date.ToShortDateString()}\nTime: {_time.ToString()}\nAddress: {_address.GetFullAddress()}";
+        return $"Title: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time.ToString()}\nAddress: {_address.GetFullAddress()}";
     }
 
     public virtual string GetFullDetails()
@@ -37,6 +37,6 @@ public class Event
 
     public virtual string GetShortDescription()
     {
-        return $"Type: Event\nTitle: {_title}\nDate: {_date.ToShortDateString()}";
+        return $"Type: Event\nTitle: {_title}\nDate: {_date}";
     }
 }

@@ -2,7 +2,7 @@ public class OutdoorGatherings : Event
 {
     private string _weatherForecast;
 
-    public OutdoorGatherings(string title, string description, DateTime date, TimeSpan time, Address address, string weatherForecast)
+    public OutdoorGatherings(string title, string description, string date, TimeSpan time, Address address, string weatherForecast)
         : base(title, description, date, time, address)
     {
         _weatherForecast = weatherForecast;
@@ -15,6 +15,6 @@ public class OutdoorGatherings : Event
 
     public override string GetShortDescription()
     {
-        return $"Type: Outdoor Gathering\nTitle: {base.GetTitle()}\nDate: {base.GetDate().ToShortDateString()}";
+        return $"Type: Outdoor Gathering\nTitle: {base.GetTitle()}\nDate: {base.GetDate()}";
     }
 }
